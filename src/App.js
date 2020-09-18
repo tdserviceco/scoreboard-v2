@@ -3,10 +3,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect
 } from "react-router-dom";
 import Home from './Pages/Home';
 import Settings from './Pages/Settings';
-import Admin from './Pages/Admin';
+import NoMatch from './Pages/NoMatch';
 import './App.css';
 
 function App() {
@@ -14,14 +15,20 @@ function App() {
     <div className="App loader">
       <Router>
         <Switch>
-        <Route path="/">
+        <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/setting">
+          <Route path="/settings">
+            <Redirect to="/admin/settings" />
+          </Route>
+          <Route path="/admin/settings">
             <Settings />
           </Route>
-          <Route path="/admin-panel">
-            <Admin />
+          <Route path="/admin">
+            <Redirect to="/admin/settings" />
+          </Route>
+          <Route path="*">
+            <NoMatch />
           </Route>
         </Switch>
       </Router>

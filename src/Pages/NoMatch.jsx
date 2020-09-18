@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Admin extends Component {
+class NoMatch extends Component {
   render() {
     return (
       <div>
-        Admin
+        404 page your looking for doesnt exist
       </div>
     );
   }
 }
 
-export default Admin;
+export default NoMatch;
