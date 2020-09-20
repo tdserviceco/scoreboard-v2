@@ -20,9 +20,7 @@
 
 .scoreboard-layout {
   display: grid;
-  background-position: center center;
-  background: url('../Img/Layout/standard.png');
-  background-size: contain;
+  background: url('../Img/Layout/standard.png') no-repeat center/cover;
   width: 1920px;
   height: 1080px;
   grid-template-columns: 40.5% 19% 40.5%;
@@ -30,19 +28,19 @@
 }
 
 .scoreboard-layout.sf {
-  background: url('../Img/Layout/sf.png') no-repeat;
+  background: url('../Img/Layout/sf.png') no-repeat center/cover;
 }
 
 .scoreboard-layout.sc6 {
-  background: url('../Img/Layout/sc.png') no-repeat;
+  background: url('../Img/Layout/sc.png') no-repeat center/cover;
 }
 
 .scoreboard-layout.dbz {
-  background: url('../Img/Layout/dbz.png') no-repeat;
+  background: url('../Img/Layout/dbz.png') no-repeat center/cover;
 }
 
 .scoreboard-layout.samurai-shodown {
-  background: url('../Img/Layout/shamsho2019.png') no-repeat;
+  background: url('../Img/Layout/shamsho2019.png') no-repeat center/cover;
 }
 
 .scoreboard-layout.sc6 .player-1, .scoreboard-layout.sc6 .player-2, .scoreboard-layout.sc6 .round {
