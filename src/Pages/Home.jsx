@@ -7,7 +7,7 @@ class home extends Component {
   render() {
     return (
       <main className="frontend">
-        <div className="scoreboard-layout sc6">
+        <div className="scoreboard-layout">
           <section className="player-1">
             <div className="player-1-country">
               <div class="country-flag"><img src={DemoFlagP1} alt="Sweden" /></div>
