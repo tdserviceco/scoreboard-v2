@@ -1,0 +1,186 @@
+@import '../reset.css';
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@font-face {
+  src: url('../Fonts/shogun/shogunsclan-w3wp.woff2') format('woff2'), url('../Fonts/shogun/shogunsclan-w3wp.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'shoguns_clanregular';
+}
+
+:root {
+  --white-text: #fff;
+  --black-text: #000;
+  --shadow-text-effect: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+}
+
+.frontend {
+  width: 1920px;
+  height: 1080px;
+}
+
+.scoreboard-layout {
+  display: grid;
+  background-position: center center;
+  background: url('../Img/Layout/standard.png');
+  background-size: contain;
+  width: 1920px;
+  height: 1080px;
+  grid-template-columns: 40.5% 19% 40.5%;
+  grid-template-rows: 60px;
+}
+
+.scoreboard-layout.sf {
+  background: url('../Img/Layout/sf.png') no-repeat;
+}
+
+.scoreboard-layout.sc6 {
+  background: url('../Img/Layout/sc.png') no-repeat;
+}
+
+.scoreboard-layout.dbz {
+  background: url('../Img/Layout/dbz.png') no-repeat;
+}
+
+.scoreboard-layout.samurai-shodown {
+  background: url('../Img/Layout/shamsho2019.png') no-repeat;
+}
+
+.scoreboard-layout.sc6 .player-1, .scoreboard-layout.sc6 .player-2, .scoreboard-layout.sc6 .round {
+  margin-top: 22px;
+}
+
+.scoreboard-layout.samurai-shodown .player-1, .scoreboard-layout.samurai-shodown .player-2 {
+  margin-top: 10px;
+}
+
+.player-1, .player-2, .round {
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', sans-serif;
+  background-color: transparent;
+  overflow: hidden;
+  grid-column: 1 / span 3;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 1 / span 3;
+  color: var(--white-text);
+}
+
+.scoreboard-layout.samurai-shodown .player-1, .scoreboard-layout.samurai-shodown .player-2, .scoreboard-layout.samurai-shodown .score {
+  text-shadow: var(--shadow-text-effect);
+}
+
+.player-1, .player-2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
+  max-width: 535px;
+}
+
+.player-1 img, .player-2 img {
+  display: flex;
+  height: 35px;
+  margin-top: -2px;
+  margin-right: -1px;
+}
+
+.scoreboard-layout.sf .player-1, .scoreboard-layout.sf .player-2 {
+  max-width: 576px;
+}
+
+.scoreboard-layout.sc6 .player-1, .scoreboard-layout.sc6 .player-2 {
+  max-width: 572px;
+}
+
+.scoreboard-layout.sf .player-1 img, .scoreboard-layout.sf .player-2 img {
+  height: 37px;
+  margin-top: -3px;
+  margin-right: -1px;
+}
+
+.scoreboard-layout.sf .player-1 img {
+  margin-right: 3px;
+  margin-top: -3px;
+}
+
+.scoreboard-layout.sc6 .player-1 img, .scoreboard-layout.sc6 .player-2 img {
+  height: 30px;
+}
+
+.scoreboard-layout.dbz .player-1 img, .scoreboard-layout.dbz .player-2 img {
+  height: 33px;
+}
+
+.player-1 {
+  padding-left: 215px;
+}
+
+.player-2 {
+  padding-right: 215px;
+  grid-column: 3/ span 1;
+  justify-self: flex-end;
+}
+
+.player-1 .player-1-score,
+.player-2 .player-2-score {
+  color: var(--black-text);
+}
+
+.scoreboard-layout.sf .player-1 .player-1-score,
+.scoreboard-layout.sf .player-2 .player-2-score {
+  color: var(--white-text);
+}
+
+.scoreboard-layout.sf .player-1 {
+  padding-left: 175px;
+}
+
+.scoreboard-layout.sf .player-2 {
+  padding-right: 175px;
+}
+
+.scoreboard-layout.samurai-shodown .player-1, .scoreboard-layout.samurai-shodown .player-2 {
+  max-width: 553px;
+}
+
+.scoreboard-layout.sc6 .player-1 {
+  padding-left: 184px;
+}
+
+.scoreboard-layout.sc6 .player-2 {
+  padding-right: 188px;
+}
+
+.scoreboard-layout.dbz .player-1 {
+  padding-left: 215px;
+  max-width: 536px;
+}
+
+.scoreboard-layout.dbz .player-2 {
+  padding-right: 226px;
+  max-width: 534px;
+}
+
+.scoreboard-layout.sc6 .player-1 .player-1-score {
+  padding-right: 5px;
+}
+
+.scoreboard-layout.sc6 .player-1 .player-1-score, .scoreboard-layout.sc6 .player-2 .player-2-score {
+  color: var(--black-text);
+  padding-left: 5px;
+}
+
+.scoreboard-layout.samurai-shodown .player-1 .player-1-score, .scoreboard-layout.samurai-shodown .player-2 .player-2-score {
+  font-family: 'shoguns_clanregular';
+  font-size: 30px;
+}
+
+.round {
+  font-size: 48px;
+  grid-column: 2 / span 1;
+  justify-self: center;
+}
