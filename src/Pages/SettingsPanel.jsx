@@ -19,8 +19,6 @@ class SettingsPanel extends Component {
           </header>
             <form>
               <Player player="p1"/>
-                <Scorehandler />
-                <Switch />
               <Player player="p2" />
           </form>
         </div>

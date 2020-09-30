@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import io from 'socket.io-client';
 const local = "localhost:5100";
+const domain = "https://xbox-socket-io.herokuapp.com/";
 class Player extends Component {
 
   constructor(props) {
@@ -38,7 +39,7 @@ class Player extends Component {
       ).then(() => {
         //Always execute
         console.log(this.state.player)
-        const socket = io.connect(local);
+        let socket = io.connect(local);
         socket.emit('server', {value : this.state.player})
       })
      
