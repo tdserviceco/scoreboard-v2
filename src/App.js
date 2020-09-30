@@ -6,8 +6,9 @@ import {
   Redirect
 } from "react-router-dom";
 import Home from './Pages/Home';
-import Settings from './Pages/Settings';
+import SettingsLogin from './Pages/SettingsLogin';
 import NoMatch from './Pages/NoMatch';
+import SettingsPanel from './Pages/SettingsPanel';
 import './App.css';
 
 function App() {
@@ -15,21 +16,30 @@ function App() {
     <div className="App loader">
       <Router>
         <Switch>
-        <Route exact path="/">
+          <Route exact path="/">
             <Home />
           </Route>
+
+          <Route exact path="/admin/settings/panel">
+            <SettingsPanel />
+          </Route>
+          
           <Route path="/settings">
-            <Redirect to="/admin/settings" />
+            <Redirect to="/admin/settings/login" />
           </Route>
-          <Route path="/admin/settings">
-            <Settings />
+
+          <Route path="/admin/settings/login">
+            <SettingsLogin />
           </Route>
+
           <Route path="/admin">
-            <Redirect to="/admin/settings" />
+            <Redirect to="/admin/settings/login" />
           </Route>
+          
           <Route path="*">
             <NoMatch />
           </Route>
+
         </Switch>
       </Router>
     </div>
