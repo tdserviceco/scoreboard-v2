@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
-
+import io from "socket.io-client";
 class SwitchPlace extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      switched: false,
-      p1: [{}],
-      p2: [{}]
+      replace: true
     };
   }
 
-  ToggleSwitchPlace = (e) => {
 
+  ToggleSwitchPlace = (e) => {
+    if (e.target.value === 'true') {
+      this.setState({
+        replace: false
+      })
+      console.log("im False: " + this.state.replace)
+    }
+    if (e.target.value === 'false') {
+      this.setState({
+        replace: true
+      })
+      console.log("im true: " + this.state.replace)
+    }
   }
+
 
   render() {
     return (
       <div>
-        <button onClick={this.ToggleSwitchPlace} value="switch">Switch</button>
+        <button onClick={this.ToggleSwitchPlace} onChange={this.ToggleSwitchPlace} value={this.state.replace}>Switch</button>
       </div>
     );
   }

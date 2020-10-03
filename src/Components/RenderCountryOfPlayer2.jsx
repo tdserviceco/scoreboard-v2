@@ -15,7 +15,6 @@ class RenderCountryOfPlayer2 extends Component {
 
   componentDidMount() {
     socket.on("player2country", ({country }) => {
-      console.log(country)
       this.setState({
         country: country
       })
