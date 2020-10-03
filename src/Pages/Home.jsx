@@ -1,22 +1,30 @@
-import React, { Component } from 'react';
-import "./Home.css";
-import Logotype from "../Img/XbF_FGC_Logo.png";
+import React, { Component } from "react";
+import RenderNameOfPlayer1 from '../Components/RenderNameOfPlayer1';
+import RenderCountryOfPlayer1 from '../Components/RenderCountryOfPlayer1';
+import RenderScoreOfPlayer1 from '../Components/RenderScoreOfPlayer1';
+
+import RenderNameOfPlayer2 from '../Components/RenderNameOfPlayer2';
+import RenderCountryOfPlayer2 from '../Components/RenderCountryOfPlayer2';
+import RenderScoreOfPlayer2 from '../Components/RenderScoreOfPlayer2';
 
 class Home extends Component {
- 
+
   render() {
-
     return (
-      <div className="frontend">
-        <div className="scoreboard-layout container">
+      <>
+        <RenderCountryOfPlayer1 />
+        <RenderNameOfPlayer1 />
+        <RenderScoreOfPlayer1 />
+        {/* <RenderRound /> */}
+        <RenderScoreOfPlayer2 />
+        <RenderNameOfPlayer2 />
+        <RenderCountryOfPlayer2 />
 
-        </div>
-        <div className="logotype-block">
-          <img src={Logotype} alt="Xbox FGC " className="logo" />
-          
-        </div>
-      </div>
+      </>
     );
   }
+
+  
 }
+
 export default Home;

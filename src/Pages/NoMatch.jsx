@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class NoMatch extends Component {
   render() {
     return (
-      <h1>
-        404 page your looking for doesnt exist
-      </h1>
+      <div class="error404">
+        <h1>Page your looking for doesnt exist anymore...</h1>
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
 :root {
   --white-text: #fff;
-  --smooth-white: rgba(255,255,255,0.7);
+  --smooth-white: rgba(255, 255, 255, 0.7);
   --black-text: #000;
   --shadow-text-effect: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
 }
