@@ -6,8 +6,8 @@ import {
   Redirect
 } from "react-router-dom";
 import NoMatch from './Pages/NoMatch';
-/* import Home from './Pages/Home';
-import AdminPanel from './Pages/AdminPanel'; */
+import Home from './Pages/Home';
+// import AdminPanel from './Pages/AdminPanel'; 
 import "./Pages/AdminPanel.css";
 class App extends Component {
   render() {
@@ -15,9 +15,9 @@ class App extends Component {
       <>
         <Router>
           <Switch>
-           {/*  <Route exact path="/">
+            <Route exact path="/">
               <Home />
-            </Route> */}
+            </Route>
            {/*  <Route exact path="/admin/panel">
               <AdminPanel />
             </Route> */}
