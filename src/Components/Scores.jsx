@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "./ScoreHandler.css";
 class Scores extends Component {
   render() {
     return (
