@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./ScoreHandler.css";
+import "ScoreHandler.css";
 import io from "socket.io-client";
 let replaceScoreP1 = 0,
   replaceScoreP2 = 0;

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import RenderNameOfPlayer1 from '../Components/RenderNameOfPlayer1';
-import RenderCountryOfPlayer1 from '../Components/RenderCountryOfPlayer1';
-import RenderScoreOfPlayer1 from '../Components/RenderScoreOfPlayer1';
+import RenderNameOfPlayer1 from 'Components/RenderNameOfPlayer1';
+import RenderCountryOfPlayer1 from 'Components/RenderCountryOfPlayer1';
+import RenderScoreOfPlayer1 from 'Components/RenderScoreOfPlayer1';
 
-import RenderNameOfPlayer2 from '../Components/RenderNameOfPlayer2';
-import RenderCountryOfPlayer2 from '../Components/RenderCountryOfPlayer2';
-import RenderScoreOfPlayer2 from '../Components/RenderScoreOfPlayer2';
+import RenderNameOfPlayer2 from 'Components/RenderNameOfPlayer2';
+import RenderCountryOfPlayer2 from 'Components/RenderCountryOfPlayer2';
+import RenderScoreOfPlayer2 from 'Components/RenderScoreOfPlayer2';
 
 class Home extends Component {
 
