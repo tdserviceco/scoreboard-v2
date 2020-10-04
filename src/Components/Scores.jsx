@@ -19,7 +19,7 @@ class Scores extends Component {
  
     const { player } = this.state;
     const LOCALHOST = "localhost:5100";
-    const DOMAIN = "https://xbox-websocket-io.herokuapp.com/"
+    const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
     const socket = io.connect(DOMAIN);
     
     if (player === "player-1") {

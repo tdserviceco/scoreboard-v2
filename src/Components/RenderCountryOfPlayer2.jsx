@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import io from "socket.io-client";
 const flagPath = process.env.PUBLIC_URL + '/assets/img/flags';
 const LOCALHOST = "localhost:5100";
-const DOMAIN = "https://xbox-websocket-io.herokuapp.com/"
+const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
 const socket = io.connect(DOMAIN);
 class RenderCountryOfPlayer2 extends Component {
   constructor(props) {

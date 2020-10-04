@@ -9,6 +9,10 @@ class AdminPanel extends Component {
           <SelectPlayer player="1" />
           <Scores player="1" />
         </div>
+        <div className="P2-settings">
+          <SelectPlayer player="2" />
+          <Scores player="2" />
+        </div>
       </div>
     );
   }
