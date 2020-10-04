@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SelectPlayer from '../Components/SelectPlayer';
 import ScoreHandler from '../Components/ScoreHandler';
 import SwitchPlace from '../Components/SwitchPlace';
-
+import "./AdminPanel.css";
 class AdminPanel extends Component {
 
   render() {

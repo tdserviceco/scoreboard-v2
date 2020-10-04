@@ -7,8 +7,7 @@ import {
 } from "react-router-dom";
 import NoMatch from './Pages/NoMatch';
 import Home from './Pages/Home';
-// import AdminPanel from './Pages/AdminPanel'; 
-import "./Pages/AdminPanel.css";
+import AdminPanel from './Pages/AdminPanel'; 
 class App extends Component {
   render() {
     return (
@@ -18,9 +17,9 @@ class App extends Component {
             <Route exact path="/">
               <Home />
             </Route>
-           {/*  <Route exact path="/admin/panel">
+            <Route exact path="/admin/panel">
               <AdminPanel />
-            </Route> */}
+            </Route>
             <Route path="*">
               <NoMatch />
             </Route>
