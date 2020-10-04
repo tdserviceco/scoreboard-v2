@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "ScoreHandler.css";
+import "./ScoreHandler.css";
 import io from "socket.io-client";
 let replaceScoreP1 = 0,
   replaceScoreP2 = 0;
@@ -21,7 +21,7 @@ class ScoreHandler extends Component {
     const { player } = this.state;
     const LOCALHOST = "localhost:5100";
     const DOMAIN = "https://xbox-websocket-io.herokuapp.com/"
-    const socket = io.connect(DOMAIN);
+    const socket = io.connect(LOCALHOST);
     
     if (player === "player-1") {
       if (e.target.value === '+') {
