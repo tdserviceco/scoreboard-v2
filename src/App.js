@@ -5,9 +5,9 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import NoMatch from './Pages/NoMatch';
-import Home from './Pages/Home';
-import AdminPanel from './Pages/AdminPanel';
+import NoMatch from './Component/NoMatch';
+import Home from './Component/Home';
+import AdminPanel from './Component/AdminPanel';
 import "./Pages/AdminPanel.css";
 class App extends Component {
   render() {
