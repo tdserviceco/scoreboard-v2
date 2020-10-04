@@ -12,20 +12,23 @@ class SwitchPlace extends Component {
 
 
   ToggleSwitchPlace = (e) => {
+    const LOCALHOST = "localhost:5100";
+    const DOMAIN = "https://xbox-websocket-io.herokuapp.com/"
+    const socket = io.connect(DOMAIN);
     if (e.target.value === 'true') {
-      this.setState({
-        replace: false
-      })
-      console.log("im False: " + this.state.replace)
-    }
+        this.setState({
+          replace : false
+        })
+        console.log("im: " + e.target.value)
+      }
+    
     if (e.target.value === 'false') {
       this.setState({
-        replace: true
+        replace : true
       })
-      console.log("im true: " + this.state.replace)
+      console.log("im: " + e.target.value)
+      }
     }
-  }
-
 
   render() {
     return (

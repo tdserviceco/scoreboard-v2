@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import io from "socket.io-client";
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-websocket-io.herokuapp.com/"
-const socket = io.connect(LOCALHOST);
+const socket = io.connect(DOMAIN);
 
 class RenderScoreOfPlayer1 extends Component {
   constructor(props) {
@@ -16,7 +16,6 @@ class RenderScoreOfPlayer1 extends Component {
 
   componentDidMount() {
     socket.on("player1Score", ({ replaceScoreP1 }) => {
-
       this.setState({
         score: replaceScoreP1
       })
