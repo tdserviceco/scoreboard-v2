@@ -18,7 +18,7 @@ class ScoreHandler extends Component {
 
   ChangeValue = (e) => {
  
-    const { player, scoreP1, scoreP2 } = this.state;
+    const { player } = this.state;
     const LOCALHOST = "localhost:5100";
     const DOMAIN = "https://xbox-websocket-io.herokuapp.com/"
     const socket = io.connect(DOMAIN);
