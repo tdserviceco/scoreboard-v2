@@ -1,6 +1,0 @@
-@import "../reset.css";
-.admin-panel {
-  background: #DFE2E5;
-  height: calc(100vh - 0.0625rem);
-  display: flex;
-}

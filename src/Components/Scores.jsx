@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./ScoreHandler.css";
 import io from "socket.io-client";
 let replaceScoreP1 = 0,
   replaceScoreP2 = 0;
@@ -9,6 +8,7 @@ class Scores extends Component {
     super(props);
 
     this.state = {
+      disabled: false,
       scoreP1: replaceScoreP1,
       scoreP2: replaceScoreP2,
       player: "player-" + props.player
@@ -20,21 +20,18 @@ class Scores extends Component {
     const { player } = this.state;
     const LOCALHOST = "localhost:5100";
     const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-    const socket = io.connect(DOMAIN);
+    const socket = io.connect(LOCALHOST);
     
     if (player === "player-1") {
       if (e.target.value === '+') {
         replaceScoreP1++
-      
         this.setState({
           scoreP1: replaceScoreP1
         })
-
         socket.emit('playerScore', { player, replaceScoreP1 })
       }
       if (e.target.value === '-') {
         replaceScoreP1--
-        console.log(replaceScoreP1);
         this.setState({
           scoreP1: replaceScoreP1
         })
@@ -44,16 +41,13 @@ class Scores extends Component {
     if (player === "player-2") {
       if (e.target.value === '+') {
         replaceScoreP2++
-      
         this.setState({
           scoreP2: replaceScoreP2
         })
-
         socket.emit('playerScore', { player, replaceScoreP2 })
       }
       if (e.target.value === '-') {
         replaceScoreP2--
-        console.log(replaceScoreP2);
         this.setState({
           scoreP2: replaceScoreP2
         })
@@ -66,10 +60,10 @@ class Scores extends Component {
     if (this.props.player === "1") {
       return (
         <div className={`scorehandler-wrapper player-${this.props.player}`}>
-          <input type="text" value={this.state.scoreP1} onChange={this.ChangeValue} />
+          <input type="number" min={0} max={3} value={this.state.scoreP1} onChange={this.ChangeValue} />
           <div className="quantity-nav">
-            <button className="quantity-button quantity-up" value="+" onClick={this.ChangeValue}>+</button>
-            <button className="quantity-button quantity-down" value="-" onClick={this.ChangeValue}>-</button>
+            <button className={`quantity-button quantity-up ${this.state.disabled ? 'btn-disabled' : ''}`} quantity-up disabled={this.state.disabled} value="+" onClick={this.ChangeValue}>+</button>
+            <button className={`quantity-button quantity-down ${this.state.disabled ? 'btn-disabled' : ''}`}  value="-" disabled={this.state.disabled} onClick={this.ChangeValue}>-</button>
           </div>
         </div>
       );
@@ -77,10 +71,10 @@ class Scores extends Component {
     if (this.props.player === "2") {
       return (
         <div className={`scorehandler-wrapper player-${this.props.player}`}>
-          <input type="number" value={this.state.scoreP2} onChange={this.ChangeValue} />
+          <input type="number" min={0} max={3} value={this.state.scoreP2} onChange={this.ChangeValue} />
           <div className="quantity-nav">
-            <button className="quantity-button quantity-up" value="+" onClick={this.ChangeValue}>+</button>
-            <button className="quantity-button quantity-down" value="-" onClick={this.ChangeValue}>-</button>
+            <button className={`quantity-button quantity-up ${this.state.disabled ? 'btn-disabled' : ''}`}  value="+" disabled={this.state.disabled} onClick={this.ChangeValue}>+</button>
+            <button className={`quantity-button quantity-down ${this.state.disabled ? 'btn-disabled' : ''}`}  value="-" disabled={this.state.disabled} onClick={this.ChangeValue}>-</button>
           </div>
         </div>
       );

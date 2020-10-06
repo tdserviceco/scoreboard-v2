@@ -49,7 +49,7 @@ class SelectPlayer extends Component {
         const { playerID, playerName, playerCountry } = this.state;
         const LOCALHOST = "localhost:5100";
         const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-        const socket = io.connect(DOMAIN);
+        const socket = io.connect(LOCALHOST);
         socket.emit('player', {
           id: playerID,
           name: playerName,

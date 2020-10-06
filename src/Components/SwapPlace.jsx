@@ -12,9 +12,6 @@ class SwitchPlace extends Component {
 
 
   ToggleSwitchPlace = (e) => {
-    const LOCALHOST = "localhost:5100";
-    const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-    const socket = io.connect(LOCALHOST);
     if (e.target.value === 'true') {
         this.setState({
           replace : false
@@ -32,8 +29,8 @@ class SwitchPlace extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.ToggleSwitchPlace} onChange={this.ToggleSwitchPlace} value={this.state.replace}>Switch</button>
+      <div className="swap-button">
+        <button onClick={this.ToggleSwitchPlace} onChange={this.ToggleSwitchPlace} value={this.state.replace}>Swap</button>
       </div>
     );
   }

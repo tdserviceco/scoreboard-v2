@@ -1,3 +1,15 @@
+
+@import "./reset.css";
+@import "./style.css";
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .loader:empty {
   position: absolute;
   top: calc(50% - 4em);
@@ -10,11 +22,83 @@
   animation: load8 1.1s infinite linear;
 }
 
-@keyframes load8 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.admin-panel {
+  padding-top: 5rem;
+  background: #DFE2E5;
+  height: calc(100vh - 0.0625rem);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
 }
+
+.scorehandler-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.scorehandler-wrapper input {
+  width: 9.5rem;
+  height: 2.625rem;
+  line-height: 1.65;
+  display: block;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  border: 0.0625rem solid #eee;
+}
+
+.scorehandler-wrapper input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  position: relative;
+  height: 2.625rem;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 0.0625rem solid #eee;
+  width: 1.25rem;
+  text-align: center;
+  color: #333;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  border: none;
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+} 

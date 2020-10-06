@@ -8,6 +8,7 @@ import {
 import NoMatch from './Pages/NoMatch';
 import Home from './Pages/Home';
 import AdminPanel from './Pages/AdminPanel'; 
+import "./App.css";
 class App extends Component {
   render() {
     return (
