@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import io from "socket.io-client";
+const LOCALHOST = "localhost:5100";
+const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
+const socket = io.connect(LOCALHOST);
 let replaceScoreP1 = 0,
   replaceScoreP2 = 0;
 
@@ -18,9 +21,6 @@ class Scores extends Component {
   ChangeValue = (e) => {
  
     const { player } = this.state;
-    const LOCALHOST = "localhost:5100";
-    const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-    const socket = io.connect(LOCALHOST);
     
     if (player === "player-1") {
       if (e.target.value === '+') {

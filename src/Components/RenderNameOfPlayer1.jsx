@@ -14,7 +14,6 @@ class RenderNameOfPlayer1 extends Component {
 
   componentDidMount() {
     socket.on("player1name", ({ name }) => {
-      console.log(name)
       this.setState({
         player: name
       })
@@ -22,8 +21,8 @@ class RenderNameOfPlayer1 extends Component {
   }
 
   renderNameOfPlayer(player) {
-    if(player === "" ) {
-      return <h3>Team | Player1</h3>
+    if(player === "" || player === "empty" ) {
+      return <h3>team | player1</h3>
     }
     return (
       <h3>

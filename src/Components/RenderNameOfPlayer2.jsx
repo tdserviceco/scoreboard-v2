@@ -23,7 +23,7 @@ class RenderNameOfPlayer2 extends Component {
 
   renderNameOfPlayer(player) {
     if (player === "") {
-      return <h3>Team | Player2</h3>
+      return <h3>team | player2</h3>
     }
     return (
       <h3>

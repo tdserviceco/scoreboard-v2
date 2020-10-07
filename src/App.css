@@ -102,3 +102,11 @@ input[type=number]
   bottom: -1px;
   height: 50%;
 } 
+
+
+.hide {
+  display: none;
+}
+.active {
+  display: block;
+}

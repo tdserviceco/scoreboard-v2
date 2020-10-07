@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import io from "socket.io-client";
+const LOCALHOST = "localhost:5100";
+const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
+const socket = io.connect(LOCALHOST);
 class SwitchPlace extends Component {
 
   constructor(props) {
@@ -13,19 +16,28 @@ class SwitchPlace extends Component {
 
   ToggleSwitchPlace = (e) => {
     if (e.target.value === 'true') {
-        this.setState({
-          replace : false
-        })
-        console.log("im: " + e.target.value)
-      }
-    
+      this.setState({
+        replace: false
+      })
+      let swap = {
+        replace: this.state.replace
+
+      };
+      socket.emit('swap-place', swap)
+    }
+
+
+
     if (e.target.value === 'false') {
       this.setState({
-        replace : true
+        replace: true
       })
-      console.log("im: " + e.target.value)
-      }
+      let swap = {
+        replace: this.state.replace
+      };
+      socket.emit('swap-place', swap)
     }
+  }
 
   render() {
     return (
