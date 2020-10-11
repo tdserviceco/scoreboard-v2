@@ -23,15 +23,12 @@ class PlayerSelect extends Component {
   }
 
   choosePlayer = (e) => {
-    console.log(e.target.value)
     const split = e.target.value.split(',');
-    console.log("Split:", split)
     this.setState({
       value: split
     })
-    console.log("Value:", this.state.value)
+    console.log(this.state.value)
   }
-
 
   listOfPlayers(playerID) {
     let players = this.state.players.sort((a, b) => a.name.localeCompare(b.name)).map((item, key) => <option key={key} value={playerID + "," + item.name + "," + item.country}>{item.name}</option>);
@@ -49,8 +46,7 @@ class PlayerSelect extends Component {
   }
 
   render() {
-    const { playerID, value } = this.state;
-    console.log(value);
+    const { playerID } = this.state;
     return (
       <>
         <select onChange={this.choosePlayer}>
