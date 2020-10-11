@@ -13,6 +13,7 @@ class PlayerSelect extends Component {
       playerID: props.player,
       players: [],
       value: [],
+      replace: props.replace
     };
   }
 
@@ -29,10 +30,6 @@ class PlayerSelect extends Component {
       value: split
     })
     console.log("Value:", this.state.value)
-
-
-    // const {playerID, value} = this.state
-    // this.socketResponse(playerID,value)
   }
 
 
@@ -52,7 +49,7 @@ class PlayerSelect extends Component {
   }
 
   render() {
-    const { playerID, value, P1SwapName, P2SwapName } = this.state;
+    const { playerID, value } = this.state;
     console.log(value);
     return (
       <>
