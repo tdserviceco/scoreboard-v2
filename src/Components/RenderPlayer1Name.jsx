@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Home extends Component {
+class RenderPlayer1Name extends Component {
   render() {
     return (
-      <div className="home">
+      <div>
         
       </div>
     );
   }
 }
 
-export default Home;
+export default RenderPlayer1Name;

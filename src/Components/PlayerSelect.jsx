@@ -57,9 +57,6 @@ class PlayerSelect extends Component {
           <option value={`${playerID},${playerID},XB`}>Select player</option>
           {this.listOfPlayers(playerID)}
         </select>
-        <select>
-          <option value={value}>{value[1]}</option>
-        </select>
       </>
     );
   }
