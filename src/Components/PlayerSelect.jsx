@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from "axios";
 import io from "socket.io-client";
+import { render } from 'react-dom';
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/";
 const socket = io.connect(LOCALHOST);
@@ -13,7 +14,8 @@ class PlayerSelect extends Component {
       playerID: props.player,
       players: [],
       value: [],
-      replace: props.replace
+      playerName: '',
+      playerCountry: ''
     };
   }
 
@@ -27,7 +29,18 @@ class PlayerSelect extends Component {
     this.setState({
       value: split
     })
-    console.log(this.state.value)
+    Axios.get('http://localhost:5100/api/player/' + split[0] + "&" + split[1] + '&' + split[2]).then(res =>
+      this.setState({
+        playerName: res.data.player,
+        playerCountry: res.data.code
+      })
+    ).catch(
+      error => console.log(error)
+    ).then(() => {
+      //Always execute
+      const { playerID, playerName, playerCountry } = this.state;
+      socket.emit('player', { playerID, playerName, playerCountry })
+    })
   }
 
   listOfPlayers(playerID) {
@@ -44,7 +57,6 @@ class PlayerSelect extends Component {
       })
       .catch(err => { console.error(err) })
   }
-
   render() {
     const { playerID } = this.state;
     return (

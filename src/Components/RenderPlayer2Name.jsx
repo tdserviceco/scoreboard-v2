@@ -4,7 +4,7 @@ import io from "socket.io-client";
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
 const socket = io.connect(LOCALHOST);
-class RenderNameOfPlayer1 extends Component {
+class RenderPlayer2Name extends Component {
   constructor(props) {
     super(props);
 
@@ -16,6 +16,7 @@ class RenderNameOfPlayer1 extends Component {
   }
 
   componentDidMount() {
+
     socket.on("swap-place", (swap) => {
       this.setState({
         swap: swap
@@ -32,28 +33,29 @@ class RenderNameOfPlayer1 extends Component {
         player1: playerName
       })
     })
+
   }
 
   renderNameOfPlayer(player1, player2) {
     const { swap } = this.state;
     if (swap) {
-      if (player1 === "" || player1 === "empty") {
-        return <h3>team | player1</h3>
+      if (player2 === "" || player2 === "empty") {
+        return <h3>team | player2</h3>
       }
       return (
         <h3>
-          {player1}
+          {player2}
         </h3>
       )
     }
     if (swap === false) {
-      if (player2 === "" || player2 === "empty") {
-        return <h3>team | player2</h3>
+      if (player1 === "" || player1 === "empty") {
+        return <h3>team | player1</h3>
       }
-  
+      
       return (
         <h3>
-          {player2}
+          {player1}
         </h3>
       )
     }
@@ -70,4 +72,4 @@ class RenderNameOfPlayer1 extends Component {
   }
 }
 
-export default RenderNameOfPlayer1;
+export default RenderPlayer2Name;

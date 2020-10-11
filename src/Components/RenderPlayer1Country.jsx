@@ -4,7 +4,7 @@ import io from "socket.io-client";
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
 const socket = io.connect(LOCALHOST);
-class RenderNameOfPlayer1 extends Component {
+class RenderPlayer1Country extends Component {
   constructor(props) {
     super(props);
 
@@ -70,4 +70,4 @@ class RenderNameOfPlayer1 extends Component {
   }
 }
 
-export default RenderNameOfPlayer1;
+export default RenderPlayer1Country;
