@@ -1,6 +1,6 @@
 {
-  "name": "scoreboard-v2-alpha",
-  "version": "0.0.1",
+  "name": "scoreboard-v2-await-edition",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
