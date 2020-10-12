@@ -4,7 +4,7 @@ const flagPath = process.env.PUBLIC_URL + '/assets/img/flags';
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
 const socket = io.connect(LOCALHOST);
-class RenderPlayer1Country extends Component {
+class RenderPlayer2Country extends Component {
   constructor(props) {
     super(props);
 
@@ -21,16 +21,16 @@ class RenderPlayer1Country extends Component {
         swap: swap
       })
     })
+    
+    socket.on("player2country", ({ country }) => {
+      this.setState({
+        countryP2: country
+      })
+    })
 
     socket.on("player1country", ({ country }) => {
       this.setState({
         countryP1: country
-      })
-    })
-
-    socket.on("player2country", ({ country }) => {
-      this.setState({
-        countryP2: country
       })
     })
   }
@@ -38,19 +38,19 @@ class RenderPlayer1Country extends Component {
   renderCountryOfPlayer(countryP1, countryP2) {
     const { swap } = this.state;
     if (swap) {
-      if (countryP1 === "" || countryP1 === undefined) {
-        return <img src={`${flagPath}/XB.png`} alt="xbox flag" />
-      }
-      return (
-        <img src={`${flagPath}/${countryP1}`} alt="Country flag P1" />
-      )
-    }
-    if (swap === false) {
       if (countryP2 === "" || countryP2 === undefined) {
         return <img src={`${flagPath}/XB.png`} alt="xbox flag" />
       }
       return (
         <img src={`${flagPath}/${countryP2}`} alt="Country flag P2" />
+      )
+    }
+    if (swap === false) {
+      if (countryP1 === "" || countryP1 === undefined) {
+        return <img src={`${flagPath}/XB.png`} alt="xbox flag" />
+      }
+      return (
+        <img src={`${flagPath}/${countryP1}`} alt="Country flag P1" />
       )
     }
   }
@@ -66,4 +66,4 @@ class RenderPlayer1Country extends Component {
   }
 }
 
-export default RenderPlayer1Country;
+export default RenderPlayer2Country;
