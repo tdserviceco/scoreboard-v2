@@ -5,7 +5,10 @@
   --smooth-white: rgba(255, 255, 255, 0.7);
   --black-text: #000;
   --shadow-text-effect: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+  --animation-speed: 0.75;
 }
+
+
 
 .container {
   max-width: 100%;

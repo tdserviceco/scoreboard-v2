@@ -33,7 +33,6 @@ class RenderPlayer2Name extends Component {
         player1: playerName
       })
     })
-
   }
 
   renderNameOfPlayer(player1, player2) {

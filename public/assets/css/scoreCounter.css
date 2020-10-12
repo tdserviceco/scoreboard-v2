@@ -59,12 +59,12 @@ input[type=number]
   height: 50%;
   top: 0;
   border: none;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.0625rem solid #eee;
 }
 
 .quantity-button.quantity-down {
   border: none;
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   height: 50%;
 } 
