@@ -50,7 +50,7 @@ class RenderPlayer2Score extends Component {
         <h3>{this.state.scoreP2}</h3>
       )
     }
-    if (swap === false) {
+    else if (swap === false) {
       if (scoreP1 === '') {
         return <h3>0</h3>
       }

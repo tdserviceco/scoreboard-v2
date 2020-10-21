@@ -45,7 +45,7 @@ class RenderPlayer2Country extends Component {
         <img src={`${flagPath}/${countryP2}`} alt="Country flag P2" />
       )
     }
-    if (swap === false) {
+    else if (swap === false) {
       if (countryP1 === "" || countryP1 === undefined) {
         return <img src={`${flagPath}/XB.png`} alt="xbox flag" />
       }
@@ -59,9 +59,9 @@ class RenderPlayer2Country extends Component {
   render() {
     const { countryP1, countryP2 } = this.state;
     return (
-      <>
+      <div className="country-block">
         {this.renderCountryOfPlayer(countryP1, countryP2)}
-      </>
+      </div>
     );
   }
 }

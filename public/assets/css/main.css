@@ -3,3 +3,19 @@
 @import './spinner.css';
 @import './scoreCounter.css';
 @import './errors.css';
+
+.scoreboard,
+.player-1-field,
+.player-2-field,
+.rounds-field {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.player-2-field,
+.player-1-field,
+.rounds-field {
+  border-top: 2px solid var(--red-effect);
+}

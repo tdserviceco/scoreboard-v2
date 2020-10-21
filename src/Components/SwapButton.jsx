@@ -17,14 +17,12 @@ class SwapButton extends Component {
       this.setState({
         replace: true
       })
-      console.log(e.target.value)
     }
 
-    if (e.target.value === 'true') {
+    else if (e.target.value === 'true') {
       this.setState({
         replace: false
       })
-      console.log(e.target.value)
     }
 
     const { replace } = this.state;

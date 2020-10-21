@@ -47,7 +47,7 @@ class RenderPlayer2Name extends Component {
         </h3>
       )
     }
-    if (swap === false) {
+    else if (swap === false) {
       if (player1 === "" || player1 === "empty") {
         return <h3>team | player1</h3>
       }
@@ -64,9 +64,9 @@ class RenderPlayer2Name extends Component {
   render() {
     const { player1, player2 } = this.state;
     return (
-      <>
+      <div className="name-block">
         {this.renderNameOfPlayer(player1, player2)}
-      </>
+      </div>
     );
   }
 }

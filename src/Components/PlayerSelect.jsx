@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Axios from "axios";
 import io from "socket.io-client";
-import { render } from 'react-dom';
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/";
 const socket = io.connect(LOCALHOST);
@@ -57,10 +56,12 @@ class PlayerSelect extends Component {
       })
       .catch(err => { console.error(err) })
   }
+
   render() {
     const { playerID } = this.state;
     return (
       <>
+        <h3>{playerID}</h3>
         <select onChange={this.choosePlayer}>
           <option value={`${playerID},${playerID},XB`}>Select player</option>
           {this.listOfPlayers(playerID)}

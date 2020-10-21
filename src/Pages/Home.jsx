@@ -10,14 +10,20 @@ import RenderPlayer2Country from '../Components/RenderPlayer2Country';
 class Home extends Component {
   render() {
     return (
-      <div className="home">
-        <RenderPlayer1Name />
-        <RenderPlayer1Country />
-        <RenderPlayer1Score />
-        <RenderPlayer2Score />
-        <RenderPlayer2Name />
-        <RenderPlayer2Country />
-
+      <div className="scoreboard">
+        <div className="player-1-field">
+          <RenderPlayer1Country />
+          <RenderPlayer1Name />
+          <RenderPlayer1Score />
+        </div>
+        <div className="rounds-field">
+          <h2>Grand finals</h2>
+        </div>
+        <div className="player-2-field">
+          <RenderPlayer2Score />
+          <RenderPlayer2Name />
+          <RenderPlayer2Country />
+        </div>
       </div>
     );
   }

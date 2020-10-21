@@ -49,7 +49,7 @@ class RenderPlayer1Score extends Component {
         <h3>{this.state.scoreP1}</h3>
       )
     }
-    if (swap === false) {
+    else if (swap === false) {
       if (scoreP2 === '') {
         return <h3>0</h3>
       }
@@ -62,7 +62,7 @@ class RenderPlayer1Score extends Component {
   render() {
     const { scoreP1, scoreP2 } = this.state;
     return (
-      <div className="score">
+      <div className="score-block">
         {this.RenderScoreOfPlayer(scoreP1, scoreP2)}
       </div>
     );
