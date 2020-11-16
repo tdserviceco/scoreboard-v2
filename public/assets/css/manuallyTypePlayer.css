@@ -1,0 +1,6 @@
+.player-1-form,
+.player-2-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

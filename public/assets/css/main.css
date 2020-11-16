@@ -2,6 +2,7 @@
 @import './style.css';
 @import './spinner.css';
 @import './scoreCounter.css';
+@import './manuallyTypePlayer.css';
 @import './errors.css';
 
 .scoreboard,
@@ -18,4 +19,8 @@
 .player-1-field,
 .rounds-field {
   border-top: 2px solid var(--red-effect);
+}
+
+.admin-panel .admin-panel-right{
+  width: 21.2rem;
 }

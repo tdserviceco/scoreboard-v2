@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import NoMatch from './Pages/NoMatch';
 import Home from './Pages/Home';
-import AdminPanel from './Pages/AdminPanel'; 
+import AdminPanel from './Pages/AdminPanel';
 
 class App extends Component {
   render() {
@@ -18,6 +18,12 @@ class App extends Component {
               <Home />
             </Route>
             <Route exact path="/admin/panel">
+              <AdminPanel />
+            </Route>
+            <Route exact path="/admin/panel/ft5">
+              <AdminPanel />
+            </Route>
+            <Route exact path="/admin/panel/ft10">
               <AdminPanel />
             </Route>
             <Route path="*">

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Axios from "axios";
 import io from "socket.io-client";
-const LOCALHOST = "localhost:5100";
+// const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/";
-const socket = io.connect(LOCALHOST);
+const socket = io.connect(DOMAIN);
 class PlayerSelect extends Component {
 
   constructor(props) {
@@ -13,15 +13,21 @@ class PlayerSelect extends Component {
       playerID: props.player,
       players: [],
       value: [],
-      playerName: '',
-      playerCountry: ''
+
     };
   }
 
-  async getPlayers() {
+  getPlayer = async () => {
     let fetchStuff = await Axios.get('http://localhost:5100/api/players')
     return fetchStuff;
   }
+
+  listOfPlayers = (playerID) => {
+    const player = this.state.players;
+    let players = player.sort((a, b) => a.name.localeCompare(b.name, 'sv')).map((item, key) => <option key={key} value={playerID + "," + item.name + "," + item.country}>{item.name}</option>);
+    return players;
+  }
+
 
   choosePlayer = (e) => {
     const split = e.target.value.split(',');
@@ -42,19 +48,13 @@ class PlayerSelect extends Component {
     })
   }
 
-  listOfPlayers(playerID) {
-    let players = this.state.players.sort((a, b) => a.name.localeCompare(b.name)).map((item, key) => <option key={key} value={playerID + "," + item.name + "," + item.country}>{item.name}</option>);
-    return players
-  }
-
-  componentDidMount() {
-    this.getPlayers()
-      .then(result => {
-        this.setState({
-          players: result.data
-        })
+  componentDidMount = () => {
+    this.getPlayer().then(repsonse => {
+      this.setState({
+        players: repsonse.data
       })
-      .catch(err => { console.error(err) })
+      console.log(this.state)
+    }).catch(error => console.error(error))
   }
 
   render() {
@@ -62,12 +62,12 @@ class PlayerSelect extends Component {
     return (
       <>
         <h3>{playerID}</h3>
-        <select onChange={this.choosePlayer}>
-          <option value={`${playerID},${playerID},XB`}>Select player</option>
-          {this.listOfPlayers(playerID)}
-        </select>
+          <select onChange={this.choosePlayer}>
+            <option value={`${playerID},${playerID},XB`}>Select player</option>
+            {this.listOfPlayers(playerID)}
+          </select>
       </>
-    );
+    )
   }
 }
 

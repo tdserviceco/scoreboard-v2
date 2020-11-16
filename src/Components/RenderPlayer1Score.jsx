@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
 import io from "socket.io-client";
-const LOCALHOST = "localhost:5100";
+// const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-const socket = io.connect(LOCALHOST);
+const socket = io.connect(DOMAIN);
 
 class RenderPlayer1Score extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class RenderPlayer1Score extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
 
     socket.on("swap-place", (swap) => {
       this.setState({
@@ -38,7 +38,7 @@ class RenderPlayer1Score extends Component {
     })
   }
 
-  RenderScoreOfPlayer(scoreP1, scoreP2) {
+  RenderScoreOfPlayer = (scoreP1, scoreP2) => {
 
     const { swap } = this.state;
     if (swap) {

@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Dubai Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Dubai Regular'), url('../fonts/dubai/Dubai-Regular.woff') format('woff');
+  }
+  
+  
+  @font-face {
+  font-family: 'Dubai Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Dubai Light'), url('../fonts/dubai/Dubai-Light.woff') format('woff');
+  }
+  
+  
+  @font-face {
+  font-family: 'Dubai Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Dubai Medium'), url('../fonts/dubai/Dubai-Medium.woff') format('woff');
+  }
+  
+  
+  @font-face {
+  font-family: 'Dubai Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Dubai Bold'), url('../fonts/dubai/Dubai-Bold.woff') format('woff');
+  }
+
 :root {
   --white-text: #fff;
   --smooth-white: rgba(255, 255, 255, 0.7);
@@ -7,6 +39,10 @@
   --shadow-text-effect: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
   --animation-speed: 0.75;
   --red-effect: #d00000;
+  --regular: 'Dubai Regular';
+  --bold: 'Dubai Bold';
+  --light: 'Dubai Light';
+  --medium: 'Dubai Medium';
 }
 
 
@@ -25,12 +61,46 @@
   display: block;
 }
 
+.btn {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+.btn.swap {
+  font-family: var(--light);
+}
+
 .admin-panel {
+  font-family: var(--medium);
   padding-top: 5rem;
   background: #DFE2E5;
   height: calc(100vh - 0.0625rem);
   display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.form-label {
+  border-top: 0.0625rem solid #000;
+  border-left: 0.0625rem solid #000;
+  border-right: 0.0625rem solid #000;
+  padding: 1rem;
+}
+
+#p1Name {
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+#p2Name {
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.country-block img {
+  width: 60px;
+  height: 40px;
 }

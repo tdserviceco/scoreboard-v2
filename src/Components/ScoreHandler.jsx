@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import io from "socket.io-client";
-const LOCALHOST = "localhost:5100";
+// const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-const socket = io.connect(LOCALHOST);
+const socket = io.connect(DOMAIN);
 let scoreP1 = 0,
   scoreP2 = 0;
 
@@ -15,16 +15,28 @@ class ScoreHandler extends Component {
       disableMinus: true,
       scoreP1: scoreP1,
       scoreP2: scoreP2,
-      player: props.player
+      player: props.player,
+      path: window.location.pathname
     };
   }
 
   ChangeValue = (e) => {
     const { player } = this.state;
+    let score;
+    if (this.state.path === '/admin/panel/ft5') {
+      score = 5;
+    }
+    else if (this.state.path === '/admin/panel/ft10') {
+      score = 10;
+    }
+    else {
+      score = 3;
+    }
     if (player === "Player-1") {
       if (e.target.value === '+') {
         scoreP1++
-        if (scoreP1 >= 3) {
+
+        if (scoreP1 >= score) {
           this.setState({
             disablePlus: true,
             disableMinus: false
@@ -40,7 +52,7 @@ class ScoreHandler extends Component {
         })
         socket.emit('playerScore', { player, scoreP1 })
       }
-      if (e.target.value === '-') {
+      else if (e.target.value === '-') {
         scoreP1--
         if (scoreP1 <= 0) {
           this.setState({
@@ -58,7 +70,7 @@ class ScoreHandler extends Component {
     if (player === "Player-2") {
       if (e.target.value === '+') {
         scoreP2++
-        if (scoreP2 >= 3) {
+        if (scoreP2 >= score) {
           this.setState({
             disablePlus: true,
             disableMinus: false
@@ -74,7 +86,7 @@ class ScoreHandler extends Component {
         })
         socket.emit('playerScore', { player, scoreP2 })
       }
-      if (e.target.value === '-') {
+      else if (e.target.value === '-') {
         scoreP2--
         if (scoreP2 <= 0) {
           this.setState({
@@ -114,7 +126,7 @@ class ScoreHandler extends Component {
         </div>
       );
     }
-    else return null;
+    else return;
   }
 }
 

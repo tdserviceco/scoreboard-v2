@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   justify-content: flex-start;
+  margin: 1rem 0;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -17,8 +18,7 @@ input[type=number]
 }
 
 .scorehandler-wrapper input {
-  width: 9.5rem;
-  height: 2.625rem;
+  width: 100%;
   line-height: 1.65;
   display: block;
   padding: 0;
@@ -33,7 +33,7 @@ input[type=number]
 
 .quantity-nav {
   position: relative;
-  height: 2.625rem;
+  height: 3.625rem;
 }
 
 .quantity-button {
@@ -54,6 +54,11 @@ input[type=number]
   user-select: none;
 }
 
+.quantity-button.quantity-up,
+.quantity-button.quantity-down {
+  width: 2rem;
+}
+
 .quantity-button.quantity-up {
   position: absolute;
   height: 50%;
@@ -68,3 +73,4 @@ input[type=number]
   bottom: 0;
   height: 50%;
 } 
+
