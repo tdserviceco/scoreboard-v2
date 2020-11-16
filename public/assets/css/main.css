@@ -4,23 +4,23 @@
 @import './scoreCounter.css';
 @import './manuallyTypePlayer.css';
 @import './errors.css';
-
-.scoreboard,
-.player-1-field,
-.player-2-field,
-.rounds-field {
+.scoreboard, .player-1-field, .player-2-field, .rounds-field {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
-.player-2-field,
-.player-1-field,
-.rounds-field {
-  border-top: 2px solid var(--red-effect);
+.player-2-field, .player-1-field, .rounds-field {
+  border-top: none;
+  background: blue;
+  color: white;
 }
 
-.admin-panel .admin-panel-right{
+.rounds-field {
+  padding: 1.2rem 0;
+}
+
+.admin-panel .admin-panel-right {
   width: 21.2rem;
 }

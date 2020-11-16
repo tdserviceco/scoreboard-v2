@@ -46,6 +46,9 @@
 }
 
 
+body {
+  zoom: 1.5;
+}
 
 .container {
   max-width: 100%;
