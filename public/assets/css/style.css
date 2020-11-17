@@ -45,11 +45,6 @@
   --medium: 'Dubai Medium';
 }
 
-
-body {
-  zoom: 1.5;
-}
-
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -106,4 +101,8 @@ body {
 .country-block img {
   width: 60px;
   height: 40px;
+}
+
+.hide {
+  opacity: 0;
 }

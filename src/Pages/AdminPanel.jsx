@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SwapButton from '../Components/SwapButton';
 import ScoreHandler from '../Components/ScoreHandler';
 import ManuallyTypePlayer from '../Components/ManuallyTypePlayer';
+import RoundText from '../Components/RoundText';
 class AdminPanel extends Component {
 
   constructor(props) {
@@ -23,12 +24,13 @@ class AdminPanel extends Component {
           <div className="player-one-settings">
             {/* <PlayerSelect player="Player-1" /> */}
             <ManuallyTypePlayer player="Player-1" />
-
             <ScoreHandler player="Player-1" />
           </div>
 
           <hr />
-
+          <RoundText />
+          <hr />
+          
           <div className="player-two-settings">
             {/* <PlayerSelect player="Player-2" /> */}
             <ManuallyTypePlayer player="Player-2" />

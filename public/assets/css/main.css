@@ -11,16 +11,35 @@
   width: 100%;
 }
 
-.player-2-field, .player-1-field, .rounds-field {
-  border-top: none;
-  background: blue;
-  color: white;
+.scoreboard {
+  zoom: 1.5;
 }
 
-.rounds-field {
-  padding: 1.2rem 0;
+.name-block,
+.scoreboard {
+  background: #fff;
+  color: #000;
+}
+
+.player-2-field, .player-1-field {
+  border-top: none;
+  background: transparent;
+  color: #fff;
+}
+
+.rounds-field,
+.score-block,
+.name-block {
+  border: 1px solid #000;
+  color: #000;
+  padding: 0.735rem;
 }
 
 .admin-panel .admin-panel-right {
   width: 21.2rem;
+}
+
+#roundText {
+  padding: 1rem;
+  width: 65%;
 }

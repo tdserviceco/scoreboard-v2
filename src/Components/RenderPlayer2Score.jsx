@@ -64,7 +64,7 @@ class RenderPlayer2Score extends Component {
   render() {
     const { scoreP1, scoreP2 } = this.state;
     return (
-      <div className="score">
+      <div className="score-block">
         {this.RenderScoreOfPlayer(scoreP1, scoreP2)}
       </div>
     );
