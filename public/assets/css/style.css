@@ -52,11 +52,9 @@
   flex-direction: column;
 }
 
-.hide {
-  display: none;
-}
 .active {
-  display: block;
+  opacity: 1;
+  transition: opacity 0.75s ease-in-out;
 }
 
 .btn {
@@ -105,4 +103,5 @@
 
 .hide {
   opacity: 0;
+  transition: opacity 0.75s ease-in-out;
 }
