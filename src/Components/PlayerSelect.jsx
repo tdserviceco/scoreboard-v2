@@ -3,7 +3,7 @@ import Axios from "axios";
 import io from "socket.io-client";
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/";
-const socket = io.connect(LOCALHOST);
+const socket = io.connect(DOMAIN);
 
 class PlayerSelect extends Component {
 

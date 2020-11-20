@@ -3,7 +3,7 @@ import io from "socket.io-client";
 const flagPath = process.env.PUBLIC_URL + '/assets/img/flags';
 const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-const socket = io.connect(LOCALHOST);
+const socket = io.connect(DOMAIN);
 
 class RenderPlayer1Country extends Component {
   constructor(props) {
