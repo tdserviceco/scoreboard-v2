@@ -1,36 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
-
 @font-face {
   font-family: 'Dubai Regular';
   font-style: normal;
   font-weight: normal;
   src: local('Dubai Regular'), url('../fonts/dubai/Dubai-Regular.woff') format('woff');
-  }
-  
-  
-  @font-face {
+}
+
+@font-face {
   font-family: 'Dubai Light';
   font-style: normal;
   font-weight: normal;
   src: local('Dubai Light'), url('../fonts/dubai/Dubai-Light.woff') format('woff');
-  }
-  
-  
-  @font-face {
+}
+
+@font-face {
   font-family: 'Dubai Medium';
   font-style: normal;
   font-weight: normal;
   src: local('Dubai Medium'), url('../fonts/dubai/Dubai-Medium.woff') format('woff');
-  }
-  
-  
-  @font-face {
+}
+
+@font-face {
   font-family: 'Dubai Bold';
   font-style: normal;
   font-weight: normal;
   src: local('Dubai Bold'), url('../fonts/dubai/Dubai-Bold.woff') format('woff');
-  }
+}
 
 :root {
   --white-text: #fff;
@@ -43,6 +39,14 @@
   --bold: 'Dubai Bold';
   --light: 'Dubai Light';
   --medium: 'Dubai Medium';
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  width: 1920px;
+  height: 1080px;
 }
 
 .container {
@@ -78,7 +82,6 @@
   align-items: center;
 }
 
-
 .form-label {
   border-top: 0.0625rem solid #000;
   border-left: 0.0625rem solid #000;
@@ -96,12 +99,21 @@
   margin-bottom: 1rem;
 }
 
+.country-block {
+  height: 42px;
+  width: 60px;
+}
+
 .country-block img {
   width: 60px;
-  height: 40px;
+  height: 39.9px;
 }
 
 .hide {
   opacity: 0;
-  transition: opacity 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
+}
+
+.xbox {
+  background: #008000;
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Axios from "axios";
 import io from "socket.io-client";
-// const LOCALHOST = "localhost:5100";
+const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/";
-const socket = io.connect(DOMAIN);
+const socket = io.connect(LOCALHOST);
+
 class PlayerSelect extends Component {
 
   constructor(props) {

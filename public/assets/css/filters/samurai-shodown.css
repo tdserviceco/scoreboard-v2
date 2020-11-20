@@ -1,0 +1,38 @@
+.scoreboard.shamsho, .scoreboard.shamsho .player-1-field, .scoreboard.shamsho .player-2-field, .scoreboard.shamsho .rounds-field {
+  justify-content: space-evenly;
+  width: auto;
+}
+
+.scoreboard.shamsho .country-block {
+  width: auto;
+}
+
+.scoreboard.shamsho .img-p2, .scoreboard.shamsho .img-p1 {
+  border-top: 0.0625rem solid #000;
+  border-bottom: 0.0625rem solid #000;
+  width: auto;
+}
+
+.scoreboard.shamsho .name-block, .scoreboard.shamsho .rounds-field, .scoreboard.shamsho .score-block {
+  color: #fff;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(255, 0, 0, 0.8743872549019608) 100%);
+}
+
+.scoreboard.shamsho .img-p1 {
+  border-left: 0.0625rem solid #000;
+}
+
+.scoreboard.shamsho .img-p2 {
+  border-right: 0.0625rem solid #000;
+}
+
+.scoreboard.shamsho .img-p1.swaped {
+  border-right: 0.0625rem solid #000;
+  border-left: none;
+}
+
+.scoreboard.shamsho .img-p2.swaped {
+  border-right: none;
+  border-left: 0.0625rem solid #000;
+}

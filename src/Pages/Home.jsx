@@ -7,9 +7,9 @@ import RenderPlayer2Name from '../Components/RenderPlayer2Name';
 import RenderPlayer2Country from '../Components/RenderPlayer2Country';
 import RendeRroundCall from '../Components/RenderRoundCall';
 import io from "socket.io-client";
-// const LOCALHOST = "localhost:5100";
+const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-const socket = io.connect(DOMAIN);
+const socket = io.connect(LOCALHOST);
 
 class Home extends Component {
   // Special fix for not displaying round caller
@@ -17,12 +17,19 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      roundTextValue: ''
+      game: '',
+      roundTextValue: false
     };
   }
 
   componentDidMount = () => {
+    socket.on('use-filter', (game) => {
+      this.setState({
+        game: game
+      })
+    })
     socket.on("roundCallText", (roundCallPackage) => {
+      console.log(roundCallPackage)
       this.setState({
         roundTextValue: roundCallPackage.roundTextValue
       })
@@ -31,21 +38,23 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="scoreboard">
+      <div className={`scoreboard ${this.state.game === '' ? '' : `${this.state.game}`}`}>
         <div className="player-1-field">
           <RenderPlayer1Country />
           <RenderPlayer1Name />
           <RenderPlayer1Score />
         </div>
-        <div className={`rounds-field ${this.state.roundTextValue ? '' : 'hide'}`} >
-          <RendeRroundCall />
-        </div>
+        {this.state.roundTextValue &&
+          <div className={`rounds-field`} >
+            <RendeRroundCall />
+          </div>
+        }
         <div className="player-2-field">
           <RenderPlayer2Score />
           <RenderPlayer2Name />
           <RenderPlayer2Country />
         </div>
-      </div>
+      </div >
     );
   }
 }

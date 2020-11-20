@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import io from "socket.io-client";
-// const LOCALHOST = "localhost:5100";
+const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-const socket = io.connect(DOMAIN);
+const socket = io.connect(LOCALHOST);
+
 class RoundText extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,6 @@ class RoundText extends Component {
       roundTextValue: this.state.roundTextValue,
       roundText: this.state.roundText
     }
-    console.log(IOPackage)
     socket.emit('roundText', IOPackage)
   }
 
@@ -31,6 +31,12 @@ class RoundText extends Component {
       this.setState({
         roundTextValue: false,
         roundText: ''
+      }, () => {
+        const IOPackage = {
+          roundTextValue: this.state.roundTextValue,
+          roundText: this.state.roundText
+        }
+        socket.emit('roundText', IOPackage)
       })
     }
     else {

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import io from "socket.io-client";
-// const LOCALHOST = "localhost:5100";
+const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/";
-const socket = io.connect(DOMAIN);
+const socket = io.connect(LOCALHOST);
+
 class SwapButton extends Component {
   constructor(props) {
     super(props);

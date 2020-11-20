@@ -4,6 +4,7 @@
 @import './scoreCounter.css';
 @import './manuallyTypePlayer.css';
 @import './errors.css';
+@import './filters-of-games.css';
 .scoreboard, .player-1-field, .player-2-field, .rounds-field {
   display: flex;
   justify-content: space-around;
@@ -12,12 +13,13 @@
 }
 
 .scoreboard {
+  font-weight: bold;
+  font-family: var(--bold);
+  position: relative;
+  overflow: hidden;
   zoom: 1.5;
-}
-
-.name-block,
-.scoreboard {
-  background: #fff;
+  padding-top: 0.0625rem;
+  background: transparent;
   color: #000;
 }
 
@@ -27,16 +29,21 @@
   color: #fff;
 }
 
-.rounds-field,
-.score-block,
-.name-block {
-  border: 1px solid #000;
-  color: #000;
+.rounds-field, .score-block, .name-block {
+  border: 0.0625rem solid #000;
   padding: 0.735rem;
+  color: #000;
+  background: #fff;
 }
 
 .admin-panel .admin-panel-right {
+  display: flex;
   width: 21.2rem;
+  margin-top: 1rem;
+}
+
+.filter-to-css {
+  width: 100%;
 }
 
 #roundText {

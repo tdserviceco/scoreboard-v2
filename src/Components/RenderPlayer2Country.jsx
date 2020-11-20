@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import io from "socket.io-client";
 const flagPath = process.env.PUBLIC_URL + '/assets/img/flags';
-// const LOCALHOST = "localhost:5100";
+const LOCALHOST = "localhost:5100";
 const DOMAIN = "https://xbox-socket-io.herokuapp.com/"
-const socket = io.connect(DOMAIN);
+const socket = io.connect(LOCALHOST);
+
 class RenderPlayer2Country extends Component {
   constructor(props) {
     super(props);
@@ -39,18 +40,18 @@ class RenderPlayer2Country extends Component {
     const { swap } = this.state;
     if (swap) {
       if (countryP2 === '' || countryP2 === 'Player-2' || countryP2 === undefined) {
-        return <img src={`${flagPath}/XB.png`} alt="xbox flag" />
+        return <img className="img-p2 xbox" src={`${flagPath}/XB.png`} alt="xbox flag" />
       }
       return (
-        <img src={`${countryP2}`} alt="Country flag P2" />
+        <img  className="img-p2" src={`${countryP2}`} alt="Country flag P2" />
       )
     }
     else if (swap === false) {
       if (countryP1 === "" || countryP1 === 'Player-1' || countryP1 === undefined) {
-        return <img src={`${flagPath}/XB.png`} alt="xbox flag" />
+        return <img className="img-p1 xbox swaped" src={`${flagPath}/XB.png`} alt="xbox flag" />
       }
       return (
-        <img src={`${countryP1}`} alt="Country flag P1" />
+        <img  className="img-p1 swaped" src={`${countryP1}`} alt="Country flag P1" />
       )
     }
   }
