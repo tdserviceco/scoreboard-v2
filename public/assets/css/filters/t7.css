@@ -4,7 +4,7 @@
 
 .scoreboard.t7 .score-block {
   background: rgb(174, 238, 181);
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 .scoreboard.t7 .player-1-field .name-block {
