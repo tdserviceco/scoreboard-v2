@@ -15,8 +15,7 @@
 
 .scoreboard.shamsho .name-block, .scoreboard.shamsho .rounds-field, .scoreboard.shamsho .score-block {
   color: #fff;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(255, 0, 0, 0.8743872549019608) 100%);
+  background: #636363cf;
 }
 
 .scoreboard.shamsho .img-p1 {
