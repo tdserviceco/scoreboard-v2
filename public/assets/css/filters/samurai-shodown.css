@@ -1,15 +1,35 @@
-.scoreboard.shamsho, .scoreboard.shamsho .player-1-field, .scoreboard.shamsho .player-2-field, .scoreboard.shamsho .rounds-field {
+
+.scoreboard.shamsho .player-1-field, .scoreboard.shamsho .player-2-field, .scoreboard.shamsho .rounds-field { 
   justify-content: space-evenly;
   width: auto;
 }
+
 
 .scoreboard.shamsho .country-block {
   width: auto;
 }
 
+.scoreboard.shamsho .player-1-field,
+.scoreboard.shamsho .player-2-field {
+  width: auto;
+  height: 54px;
+  background: url('../../img/bambu.jpg');
+}
+
+.scoreboard.shamsho .country-block {
+  height: 55px;
+}
+
+.scoreboard.shamsho .rounds-field, .scoreboard.shamsho .score-block, .scoreboard.shamsho .name-block {
+  padding: 0.6rem 0.735rem;
+}
+
+
+
 .scoreboard.shamsho .img-p2, .scoreboard.shamsho .img-p1 {
   border-top: 0.0625rem solid #000;
   border-bottom: 0.0625rem solid #000;
+  zoom: 1.3;
   width: auto;
 }
 

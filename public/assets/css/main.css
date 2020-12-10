@@ -5,6 +5,11 @@
 @import './manuallyTypePlayer.css';
 @import './errors.css';
 @import './filters-of-games.css';
+
+body .admin-panel {
+  font-size: 1rem;
+}
+
 .scoreboard, .player-1-field, .player-2-field, .rounds-field {
   display: flex;
   justify-content: space-around;
@@ -17,7 +22,6 @@
   font-family: var(--bold);
   position: relative;
   overflow: hidden;
-  zoom: 1.5;
   padding-top: 0.0625rem;
   background: transparent;
   color: #000;

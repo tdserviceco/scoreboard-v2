@@ -17,7 +17,11 @@
   background: linear-gradient(86deg, rgba(174, 238, 181, 1) 26%, rgba(171, 225, 183, 1) 35%, rgba(169, 226, 194, 1) 47%, rgba(147, 228, 144, 1) 68%, rgba(90, 251, 68, 1) 84%, rgba(67, 245, 61, 1) 100%);
 }
 
-.scoreboard.t7 .player-1-field, .scoreboard.t7 .player-2-field, .scoreboard.t7 .rounds-field {
+.scoreboard.t7 .rounds-field {
+  background: rgb(174, 238, 181);
+}
+
+.scoreboard.t7, .scoreboard.t7 .player-1-field, .scoreboard.t7 .player-2-field, .scoreboard.t7 .rounds-field {
   justify-content: space-evenly;
   width: auto;
 }
@@ -25,4 +29,8 @@
 .scoreboard.t7 .country-block img {
   width: 100%;
   height: 41.9px;
+}
+
+.scoreboard.t7 .country-block {
+  zoom: 1.3;
 }
